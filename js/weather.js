@@ -1,5 +1,5 @@
 const getWeatherInfo = async query => {
-    const apikey = '571fed81ead2a8415cbfa38c331be917'
+    const apikey = process.env.API_KEY
     const  baseURI = 'https://api.openweathermap.org/data/2.5/weather'
     const weatherInfo = await (await fetch(`${baseURI}?${query}&appid=${apikey}`)).json()
     return weatherInfo
